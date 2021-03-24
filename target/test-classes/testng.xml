@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Interview test suite">
-    <test name="Example of Test">
-        <classes>
-            <class name="am.mouse.interview.test.MainTest"></class>
-        </classes>
-    </test>
-</suite>
-
