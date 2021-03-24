@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="am.mouse.interview.test" status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%5p ] [%t] - %m%n"/>
+        </Console>
+        <RollingFile
+                name="RollingFile"
+                filename="test-output/log/test-output.log"
+                filepattern="logs/%d{yyyy-MM-dd}-automation.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%5p ] [%t] - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+        <ReportAppender name="ReportAppender"/>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="ReportAppender"/>
+        </Root>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

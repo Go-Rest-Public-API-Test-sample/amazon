@@ -1,0 +1,11 @@
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/entity/WebComponent.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/entity/DriverType.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/ExtendedFieldDecorator.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/driver/FirefoxDriverManager.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/BaseWebScraper.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/restfulapi/ClientExample.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/BaseComponent.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/restfulapi/ApiResponse.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/driver/DriverManagerFactory.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/driver/DriverManager.java
+/home/narek.kostanyn/IdeaProjects/interview-project/src/main/java/am/mouse/interview/scraper/driver/ChromeDriverManager.java
