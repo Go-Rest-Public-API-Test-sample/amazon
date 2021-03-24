@@ -1,5 +1,6 @@
 package am.mouse.interview.scraper.components;
 
+import am.mouse.interview.scraper.pages.CartPage;
 import am.mouse.interview.scraper.pages.SearchResultPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,9 @@ public class NavigationBelt extends BaseComponent {
     @FindBy(id = "nav-search-submit-button")
     private WebElement submitButton;
 
+    @FindBy(id = "nav-cart")
+    private WebElement cart;
+
     public SearchResultPage search(String searchItem){
         searchInputBox.clear();
         searchInputBox.sendKeys(searchItem);
@@ -25,4 +29,9 @@ public class NavigationBelt extends BaseComponent {
         return new SearchResultPage(driver);
     }
 
+
+    public CartPage openCart() {
+        cart.click();
+        return new CartPage(driver);
+    }
 }

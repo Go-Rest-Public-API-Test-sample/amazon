@@ -1,7 +1,6 @@
 package am.mouse.interview.scraper.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,12 +12,7 @@ public class ItemPage extends BaseAmazonPage{
     public ItemPage(WebDriver driver) {
         super(driver);
     }
-
-    private static final String ON_CHANGE_EVENT_FIRE_SCRIPT = "var event = new Event('input', {\n" +
-            "    bubbles: true,\n" +
-            "    cancelable: true,\n" +
-            "}); \n" +
-            "arguments[0].dispatchEvent(event);";
+    private static final String CART_INFO_BOX = "a-box-group";
 
     @FindBy(css = "#dropdown_selected_size_name .a-dropdown-prompt")
     private WebElement sizeDropDown;
@@ -31,24 +25,25 @@ public class ItemPage extends BaseAmazonPage{
     private WebElement addToCartButton;
 
 
-    @FindBy(xpath = "\"//span[@class='a-dropdown-prompt' and contains(text(), 'Select')]\"")
-    private WebElement small;
-
+    @FindBy(id = "productTitle")
+    private WebElement title;
 
     public void selectFirstSize() {
         wait.until(ExpectedConditions.elementToBeClickable(sizeDropDown));
         sizeDropDown.click();
-        JavascriptExecutor jsex = (JavascriptExecutor) driver;
+        assert  sizeList.size() > 0;
         sizeList.get(1).click();
-        jsex.executeScript(ON_CHANGE_EVENT_FIRE_SCRIPT, sizeDropDown);
         wait.until(ExpectedConditions.visibilityOfAllElements(sizeDropDown));
     }
 
-
     public void addToCart(){
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.name("submit.add-to-cart")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className(CART_INFO_BOX)));
         wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
         addToCartButton.click();
+    }
+
+    public String title(){
+        return title.getText();
     }
 
 }

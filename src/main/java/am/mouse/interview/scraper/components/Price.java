@@ -25,7 +25,6 @@ public class Price extends BaseComponent {
                 maxPrice = price;
             }
         }
-        System.out.println("price"+maxPrice);
         return maxPrice;
     }
 
